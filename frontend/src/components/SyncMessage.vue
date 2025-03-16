@@ -22,7 +22,7 @@ watch(message, (value) => {
   socket.emit("message", value);
 });
 
-const socket = io("http://localhost:3000");
+const socket = io(process.env.VUE_APP_API_URL);
 
 socket.on("message", (msg) => {
   message.value = msg;
